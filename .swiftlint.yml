@@ -1,0 +1,11 @@
+line_length:
+  - 200 # warning
+  - 300 # error
+disabled_rules: # rule identifiers turned on by default to exclude from running
+  - colon
+  - comma
+  - control_statement
+  - trailing_whitespace
+excluded: # paths to ignore during linting. overridden by `included`.
+  - Carthage
+  - Pods
