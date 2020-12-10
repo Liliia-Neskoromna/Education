@@ -21,7 +21,6 @@ final class HWOneViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        inputTextField.delegate = self
         addDoneButtonTo(inputTextField)
         
         configureStackView()
@@ -68,6 +67,7 @@ final class HWOneViewController: UIViewController {
         stackView.alignment    = .fill
         stackView.spacing      = 45
         view.addSubview(stackView)
+        view.translatesAutoresizingMaskIntoConstraints = true
         setStackViewConstraint()
         addSubviewsToStackView()
     }
