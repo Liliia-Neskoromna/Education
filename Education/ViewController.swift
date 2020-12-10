@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class HWOneViewController: UIViewController {
+final class ViewController: UIViewController {
     @IBOutlet private weak var inputTextField: UITextField!
     @IBOutlet private weak var outputLabel: UILabel!
     @IBOutlet private weak var factorialRecButton: UIButton!
@@ -96,7 +96,7 @@ final class HWOneViewController: UIViewController {
     }
 }
 
-extension HWOneViewController {
+extension ViewController {
     
     private func addDoneButtonTo(_ textField: UITextField) {
 

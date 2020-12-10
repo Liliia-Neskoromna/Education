@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Functions {
+final class Functions {
     
     static let shared = Functions()
     
