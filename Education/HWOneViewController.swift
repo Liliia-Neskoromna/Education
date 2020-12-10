@@ -21,7 +21,7 @@ final class HWOneViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        inputTextField.delegate = self
+//        inputTextField.delegate = self
         addDoneButtonTo(inputTextField)
         
         configureStackView()
@@ -93,18 +93,6 @@ final class HWOneViewController: UIViewController {
                                           constant: -50).isActive = true
         stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,
                                             constant: -50).isActive = true
-    }
-}
-
-extension HWOneViewController: UITextFieldDelegate {
-    
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        return true
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
 }
 
