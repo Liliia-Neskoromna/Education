@@ -13,6 +13,7 @@
 		991D6689257BEF2800553A6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 991D6687257BEF2800553A6F /* Main.storyboard */; };
 		991D668B257BEF2A00553A6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 991D668A257BEF2A00553A6F /* Assets.xcassets */; };
 		991D668E257BEF2A00553A6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 991D668C257BEF2A00553A6F /* LaunchScreen.storyboard */; };
+		995BFA8E25822C2D00029345 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995BFA8D25822C2D00029345 /* Functions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		991D668A257BEF2A00553A6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		991D668D257BEF2A00553A6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		991D668F257BEF2A00553A6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		995BFA8D25822C2D00029345 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				991D6681257BEF2800553A6F /* AppDelegate.swift */,
 				991D6683257BEF2800553A6F /* SceneDelegate.swift */,
 				991D6685257BEF2800553A6F /* HWOneViewController.swift */,
+				995BFA8D25822C2D00029345 /* Functions.swift */,
 				991D6687257BEF2800553A6F /* Main.storyboard */,
 				991D668A257BEF2A00553A6F /* Assets.xcassets */,
 				991D668C257BEF2A00553A6F /* LaunchScreen.storyboard */,
@@ -162,6 +165,7 @@
 				991D6686257BEF2800553A6F /* HWOneViewController.swift in Sources */,
 				991D6682257BEF2800553A6F /* AppDelegate.swift in Sources */,
 				991D6684257BEF2800553A6F /* SceneDelegate.swift in Sources */,
+				995BFA8E25822C2D00029345 /* Functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

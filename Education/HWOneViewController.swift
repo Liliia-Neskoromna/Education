@@ -15,12 +15,50 @@ final class HWOneViewController: UIViewController {
     @IBOutlet private weak var fibonacciButton: UIButton!
     @IBOutlet private weak var piToNButton: UIButton!
     
+    let functions = Functions.shared
+    
     var stackView = UIStackView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        inputTextField.delegate = self
+        addDoneButtonTo(inputTextField)
         
         configureStackView()
+    }
+    
+    @IBAction func onButtonTypped(_ sender: UIButton) {
+        
+        guard let text = inputTextField.text else { return }
+        guard let inputNumber = Int(text) else { return }
+        
+        if sender.tag == 1 {
+            
+            let result = functions.factorialRecursion(inputNumber)
+            outputLabel.text = String(result)
+            
+        } else if sender.tag == 2 {
+            
+            let result = functions.factorialIteration(inputNumber)
+            outputLabel.text = String(result)
+            
+        } else if sender.tag == 3 {
+            
+            var resultArray = [String]()
+            let element = functions.fibonacci(inputNumber)
+            
+            element.forEach { num in
+                resultArray.append(String(num))
+            }
+            
+            let stringRepresentation = resultArray.joined(separator: ", ")
+            outputLabel.text = stringRepresentation
+            
+        } else if sender.tag == 4 {
+            
+            let result = functions.piToN(inputNumber)
+            outputLabel.text = String(result)
+        }
     }
     
     private func configureStackView() {
@@ -60,20 +98,37 @@ final class HWOneViewController: UIViewController {
 
 extension HWOneViewController: UITextFieldDelegate {
     
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let text = textField.text else {
-            return true
-        }
-        let newStr = (text as NSString).replacingCharacters(in: range, with: string)
+}
 
-        guard let intValue = Int(newStr) else {
-            return true
-        }
-        return intValue <= 1000
+extension HWOneViewController {
+    
+    private func addDoneButtonTo(_ textField: UITextField) {
+
+        let numberToolbar = UIToolbar()
+        textField.inputAccessoryView = numberToolbar
+        numberToolbar.sizeToFit()
+
+        let doneButton = UIBarButtonItem(title:"Done",
+                                         style: .done,
+                                         target: self,
+                                         action: #selector(didTapDone))
+
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                            target: nil,
+                                            action: nil)
+
+        numberToolbar.items = [flexBarButton, doneButton]
+    }
+
+    @objc private func didTapDone() {
+        view.endEditing(true)
     }
 }
