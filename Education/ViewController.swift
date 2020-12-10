@@ -15,9 +15,9 @@ final class ViewController: UIViewController {
     @IBOutlet private weak var fibonacciButton: UIButton!
     @IBOutlet private weak var piToNButton: UIButton!
     
-    let functions = Functions.shared
+    private let functions = Functions.shared
     
-    var stackView = UIStackView()
+    private var stackView = UIStackView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ final class ViewController: UIViewController {
         configureStackView()
     }
     
-    @IBAction func onButtonTypped(_ sender: UIButton) {
+    @IBAction private func onButtonTypped(_ sender: UIButton) {
         
         guard let text = inputTextField.text else { return }
         guard let inputNumber = Int(text) else { return }
